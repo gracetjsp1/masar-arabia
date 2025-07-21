@@ -2,8 +2,9 @@
     <div class="container">
         <div class="row">
             <!-- Product Item #1 -->
-            <div class="col-sm-12 col-md-6 col-lg-4">
+            
                 @foreach ($mainProducts as $product)
+                <div class="col-sm-12 col-md-6 col-lg-4">
                     <a href="{{ route('products.subcategories', $product->slug) }}">
                         <div class="blog-item">
                             <div class="blog__img">
@@ -26,8 +27,9 @@
                             </div><!-- /.entry-content -->
                         </div>
                     </a><!-- /.product-item -->
+                     </div><!-- /.col-lg-4 -->
                    @endforeach
-            </div><!-- /.col-lg-4 -->
+           
         </div>
     </div>
 </section>

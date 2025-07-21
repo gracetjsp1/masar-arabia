@@ -14,7 +14,7 @@
                                 <i class="icon-phone"></i>
                                 <a href="tel:+966126576896">966 12 657 6896</a>
                             </p>
-                            <p>Masar Arabia First Trading Company Othman Bin Afan Street, PO Box No. 16301 Jeddah 22234,
+                            <p class="color-gray">Masar Arabia First Trading Company Othman Bin Afan Street, PO Box No. 16301 Jeddah 22234,
                                 Saudi
                                 Arabia</p>
                             <ul class="social__icons">

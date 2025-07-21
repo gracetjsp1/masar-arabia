@@ -26,7 +26,7 @@
                                                     </div>
 
                                                     <figcaption class="product_content text-center">
-                                                        <h4>{{ $product->name }} - {{ $product->sku }}
+                                                        <h4>{{ $product->name }}<br> {{ $product->sku }}
                                                         </h4>
                                                         <!-- <div class="price_box">
                                                                 <span class="current_price">PCE-GMM 10</span>

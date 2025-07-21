@@ -17,7 +17,8 @@
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="product_details_sidebar">
-                    <h2 class="product__title">{{ $subSubCategory->name }}</h2>
+                    
+                    <h2 class="product__title">{{ $subSubCategory->name }} {{ $subSubCategory->sku }}</h2>
                     <div class="price_box">
                         <span class="current_price">SKU : {{ $subSubCategory->sku }}</span><br>
                         <span class="current_price">Category : {{ $subCategory->name }}</span>

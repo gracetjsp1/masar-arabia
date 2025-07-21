@@ -5,38 +5,48 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\MainProduct;
 use App\Models\SubCategory;
-use App\Models\SubSubCategory;
 use Illuminate\Support\Facades\File;
 
 class CreateProductImageFolders extends Command
 {
     protected $signature = 'products:create-folders';
-    protected $description = 'Create image folders for all products, subcategories, and sub-subcategories';
+    protected $description = 'Create image folders for all products and subcategories';
 
     public function handle()
     {
         $basePath = public_path('uploads/products');
 
         foreach (MainProduct::all() as $main) {
-            $mainPath = $basePath . '/' . $main->slug;
-            File::makeDirectory($mainPath, 0755, true, true);
-            $this->info("Created: $mainPath");
+            $mainSlug = trim($main->slug);
+            $mainPath = $basePath . '/' . $mainSlug;
+            $this->createFolder($mainPath);
 
             $subCategories = SubCategory::where('main_product_id', $main->id)->get();
             foreach ($subCategories as $sub) {
-                $subPath = $mainPath . '/' . $sub->slug;
-                File::makeDirectory($subPath, 0755, true, true);
-                $this->info("Created: $subPath");
-
-                // $subSubs = SubSubCategory::where('sub_category_id', $sub->id)->get();
-                // foreach ($subSubs as $subSub) {
-                //     $subSubPath = $subPath . '/' . $subSub->slug;
-                //     File::makeDirectory($subSubPath, 0755, true, true);
-                //     $this->info("Created: $subSubPath");
-                // }
+                $subSlug = trim($sub->slug);
+                $subPath = $mainPath . '/' . $subSlug;
+                $this->createFolder($subPath);
             }
         }
 
-        $this->info('All folders created successfully!');
+        $this->info("\n✅ All main and subcategory folders created successfully!");
+    }
+
+    private function createFolder($path)
+    {
+        $path = trim($path);
+
+        if (!File::exists($path)) {
+            File::makeDirectory($path, 0755, true, true);
+            $this->info("Created: " . $path);
+        }
+
+        if (File::isDirectory($path)) {
+            try {
+                File::put($path . '/.gitkeep', '');
+            } catch (\Exception $e) {
+                $this->error("⚠️ Could not write to: $path/.gitkeep – " . $e->getMessage());
+            }
+        }
     }
 }

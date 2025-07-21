@@ -14,7 +14,7 @@
 
 @endsection
 
-@section('content')
+{{-- @section('content')
 <div class="container py-5">
     <h2>{{ $subSubCategory->name }}</h2>
     <p><strong>Main Category:</strong> {{ $mainProduct->name }}</p>
@@ -36,4 +36,4 @@
 
     <a href="{{ route('products.subsubcategories', [$mainProduct->slug, $subCategory->slug]) }}" class="btn btn-secondary">← Back to Products</a>
 </div>
-@endsection
+@endsection --}}

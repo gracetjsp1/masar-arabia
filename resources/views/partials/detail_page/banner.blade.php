@@ -14,6 +14,14 @@
                       <ol class="breadcrumb justify-content-start mb-0">
                           <li class="breadcrumb-item"><a href="/">Home</a></li>
                           <li class="breadcrumb-item"><a href="/products">Products</a></li>
+                          {{-- Main Product --}}
+                          <li class="breadcrumb-item">
+                              <a href="{{ route('products.subcategories', $mainProduct->slug) }}">
+                                  {{ $mainProduct->name }}
+                              </a>
+                          </li>
+
+                          {{-- Subcategory --}}
                           <li class="breadcrumb-item">
                               <a
                                   href="{{ route('products.subsubcategories', [$mainProduct->slug, $subCategory->slug]) }}">

@@ -2,10 +2,7 @@
 <div class="product_page_section mb-100 mt-100">
     <div class="container">
         <div class="row">
-
             <div class="col-lg-12 order-1 order-lg-2">
-
-
 
                 <!--shop gallery start-->
                 <div class="product_page_gallery">
@@ -38,24 +35,26 @@
                                                                 <img src="{{ asset($imgPath) }}"
                                                                     alt="{{ $product->name }}">
                                                             @endif
-
                                                         </div>
-
                                                         <figcaption class="product_content text-center">
-                                                            <h4>{{ $product->name }} - {{ $product->sku }}
-                                                            </h4>
-                                                            <!-- <div class="price_box">
-                                                                <span class="current_price">PCE-GMM 10</span>
-                                                            </div> -->
+                                                            <h4>{{ $product->name }} - {{ $product->sku }}</h4>
                                                         </figcaption>
-
                                                     </figure>
                                                 </a>
                                             </article>
                                         </div>
                                     @endforeach
+
+                                    <!-- Pagination -->
+                                    <div class="row w-100">
+                                    <div class="w-100 d-flex justify-content-center mt-4">
+                                        {{ $subSubCategories->appends(['query' => request('query')])->links() }}
+                                    </div>
+                                    </div>
+                                    <!-- End Pagination -->
+
                                 @else
-                                    <div class="alert alert-warning">
+                                    <div class="alert alert-warning col-12 text-center">
                                         No products found for "<strong>{{ $query }}</strong>".
                                     </div>
                                 @endif
@@ -63,6 +62,8 @@
                         </div>
                     </div>
                 </div>
+                <!--shop gallery end-->
+
             </div>
         </div>
     </div>

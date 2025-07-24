@@ -48,12 +48,22 @@ class ProductController extends Controller
     }
     // Show sub-subcategories of a selected subcategory
     public function showSubSubCategories($mainSlug, $subSlug)
-    {
-        $mainProduct = MainProduct::where('slug', $mainSlug)->firstOrFail();
-        $subCategory = SubCategory::where('slug', $subSlug)->firstOrFail();
-        $subSubCategories = $subCategory->subSubCategories;
-        return view('products.subsubcategories', compact('mainProduct', 'subCategory', 'subSubCategories'));
-    }
+{
+    $mainProduct = MainProduct::where('slug', $mainSlug)->firstOrFail();
+    $subCategory = SubCategory::where('slug', $subSlug)->firstOrFail();
+
+    // Pagination for sub-subcategories (9 per page)
+    $subSubCategories = $subCategory->subSubCategories()->paginate(12);
+
+    return view('products.subsubcategories', compact('mainProduct', 'subCategory', 'subSubCategories'));
+}
+    // public function showSubSubCategories($mainSlug, $subSlug)
+    // {
+    //     $mainProduct = MainProduct::where('slug', $mainSlug)->firstOrFail();
+    //     $subCategory = SubCategory::where('slug', $subSlug)->firstOrFail();
+    //     $subSubCategories = $subCategory->subSubCategories;
+    //     return view('products.subsubcategories', compact('mainProduct', 'subCategory', 'subSubCategories'));
+    // }
 
     // Show detailed individual product page (from sub-subcategory)
     public function showProductDetail($mainSlug, $subSlug, $subSubSlug)
@@ -100,7 +110,9 @@ class ProductController extends Controller
         $subSubCategories = SubSubCategory::with(['subCategory.mainProduct'])
             ->where('name', 'like', "%$query%")
             ->orWhere('sku', 'like', "%$query%")
-            ->get();
+            // ->get();
+            ->paginate(12);
+
 
         return view('products.search_results', compact('query', 'subSubCategories'));
     }
@@ -111,7 +123,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
         ]);
-        $slug = Str::slug(trim($request->name));
+        $slug = Str::slug(trim($request->input('name')));
         // $slug = Str::slug($request->name);
         $folderPath = public_path("uploads/products/$slug");
 
@@ -119,7 +131,7 @@ class ProductController extends Controller
         File::makeDirectory($folderPath, 0755, true, true); // recursive = true
 
         $product = new MainProduct();
-        $product->name = $request->name;
+        $product->name = $request->input('name');
         $product->slug = $slug;
         $product->icon_image = "$slug/icon.png";
         $product->main_image = "$slug/main.jpg";
@@ -136,14 +148,14 @@ class ProductController extends Controller
         ]);
 
         $mainProduct = MainProduct::where('slug', $mainSlug)->firstOrFail();
-        $subSlug = Str::slug($request->name);
+        $subSlug = Str::slug($request->input('name'));
         $folderPath = public_path("uploads/products/$mainSlug/$subSlug");
 
         File::makeDirectory($folderPath, 0755, true, true);
 
         $subcategory = new SubCategory();
         $subcategory->main_product_id = $mainProduct->id;
-        $subcategory->name = $request->name;
+        $subcategory->name = $request->input('name');
         $subcategory->slug = $subSlug;
         $subcategory->icon_image = "$mainSlug/$subSlug/icon.png";
         $subcategory->main_image = "$mainSlug/$subSlug/main.jpg";

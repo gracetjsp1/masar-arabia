@@ -2164,34 +2164,73 @@ textarea.form-control {
 /*----------------------
     Pagination
 -----------------------*/
-.pagination li {
+/* .pagination li {
     margin-right: 10px;
-}
-
-.pagination li:last-child {
-    margin-right: 0;
-}
-
-.pagination li a {
     font-size: 20px;
     font-weight: 700;
     display: block;
     width: 50px;
     height: 50px;
-    line-height: 48px;
+    line-height: 38px;
     background-color: #f4f4f4;
     color: #222222;
     text-align: center;
     border: none;
-    border-radius: 50%;
+}
+
+.pagination li:last-child {
+    margin-right: 0;
+}
+.pagination li span{
+ font-size: 20px;
+    font-weight: 700;
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 38px;
+    background-color: #f4f4f4;
+    color: #222222;
+    text-align: center;
+    border: none;
+} */
+.page-item.disabled .page-link {
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 38px;
+    background-color: #f4f4f4;
+    color: #222222;
+    text-align: center;
+    border: none;
+    pointer-events: none; /* prevent click */
+    opacity: 0.6; /* optional for faded look */
+}
+/* .page-item.disabled .page-link:hover{
+    background-color: #ec8d22;
+    color: #ffffff; 
+} */
+/* .pagination li a {
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 38px;
+    background-color: #f4f4f4;
+    color: #222222;
+    text-align: center;
+    border: none;
+    
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
     -ms-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
-}
+} */
 
-.pagination li a i {
+/* .pagination li a i {
     font-weight: 700;
 }
 
@@ -2208,7 +2247,36 @@ textarea.form-control {
         height: 40px;
         line-height: 38px;
     }
+} */
+.pagination li {
+    margin-right: 10px;
 }
+
+.pagination li .page-link {
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 38px;
+    background-color: #f4f4f4;
+    color: #222222;
+    text-align: center;
+    border: none;
+    transition: all 0.3s linear;
+}
+
+.pagination li .page-link:hover,
+.pagination li .page-link.active {
+    background-color: #ec8d22;
+    color: #fff;
+}
+
+.pagination li.active .page-link {
+    background-color: #ec8d22;
+    color: #fff;
+}
+
 
 /*-------------------
     lists
@@ -7936,7 +8004,7 @@ textarea.form-control {
     }
 }
 .product_content h4 {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 20px;
     font-weight: 500;
     font-family: "Roboto", sans-serif;

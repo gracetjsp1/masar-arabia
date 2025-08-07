@@ -8004,15 +8004,15 @@ textarea.form-control {
     }
 }
 .product_content h4 {
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 13.5px;
+    line-height: 16px;
     font-weight: 500;
     font-family: "Roboto", sans-serif;
     margin-bottom: 0;
-    min-height: 65px;
+    min-height: 75px;
 }
-.product_content h4 a:hover {
-    color: #ec8d22;
+.product_content h4:hover {
+    color: #ec8d22 !important;
 }
 
 .price_box span {

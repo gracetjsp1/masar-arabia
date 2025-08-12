@@ -16,7 +16,7 @@
                   </h2>
                   <p class="slide__desc">Comprehensive range of precision instruments for accurate measurement and
                     control, ensuring efficiency, reliability, and safety across industries.</p>
-                  <a href="product.html" class="btn btn__primary btn__hover2 mr-30">
+                  <a href="{{ url('/products') }}" class="btn btn__primary btn__hover2 mr-30">
                     <i class="icon-arrow-right"></i><span>Our Products</span>
                   </a>
                   <a href="#" class="btn btn__white btn__bordered">
@@ -39,7 +39,7 @@
                   <p class="slide__desc">Discover our advanced range of precision instruments, engineered to provide
                     unmatched accuracy and control. Designed to enhance performance, ensure safety, and drive efficiency
                     in diverse industries.</p>
-                  <a href="product.html" class="btn btn__white mr-30">
+                  <a href="{{ url('/products') }}" class="btn btn__white mr-30">
                     <i class="icon-arrow-right"></i><span>Our Products</span>
                   </a>
                   <a href="#" class="btn btn__primary btn__hover2">

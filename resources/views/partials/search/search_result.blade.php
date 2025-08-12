@@ -31,10 +31,14 @@
                                                                 $product->image;
                                                         @endphp
                                                         <div class="product_thumb">
-                                                            @if (file_exists(public_path($imgPath)))
+                                                            @if ($product->image)
                                                                 <img src="{{ asset($imgPath) }}"
                                                                     alt="{{ $product->name }}">
                                                             @endif
+                                                            {{-- @if (file_exists(public_path($imgPath)))
+                                                                <img src="{{ asset($imgPath) }}"
+                                                                    alt="{{ $product->name }}">
+                                                            @endif --}}
                                                         </div>
                                                         <figcaption class="product_content text-center">
                                                             <h4>{{ $product->name }} - {{ $product->sku }}</h4>
@@ -47,12 +51,11 @@
 
                                     <!-- Pagination -->
                                     <div class="row w-100">
-                                    <div class="w-100 d-flex justify-content-center mt-4">
-                                        {{ $subSubCategories->appends(['query' => request('query')])->links() }}
-                                    </div>
+                                        <div class="w-100 d-flex justify-content-center mt-4">
+                                            {{ $subSubCategories->appends(['query' => request('query')])->links() }}
+                                        </div>
                                     </div>
                                     <!-- End Pagination -->
-
                                 @else
                                     <div class="alert alert-warning col-12 text-center">
                                         No products found for "<strong>{{ $query }}</strong>".

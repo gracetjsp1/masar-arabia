@@ -4,7 +4,7 @@
  <header id="header" class="header header-transparent">
      <nav class="navbar navbar-expand-lg sticky-navbar">
          <div class="container">
-             <a class="navbar-brand" href="index.html">
+             <a class="navbar-brand" href="{{ url('/') }}">
                  <img src="{{ asset('assets/images/logo/logo-light.png') }}" class="logo-light" alt="logo">
                  <img src="{{ asset('assets/images/logo/logo-dark.png') }}" class="logo-dark" alt="logo">
              </a>
@@ -14,11 +14,11 @@
              <div class="collapse navbar-collapse" id="mainNavigation">
                  <ul class="navbar-nav ml-5">
                      <li class="nav__item">
-                         <a href="/" class="dropdown-toggle nav__item-link active">Home</a>
+                         <a href="{{ url('/') }}" class="dropdown-toggle nav__item-link active">Home</a>
                          <!-- <i class="fa fa-angle-right" data-toggle="dropdown"></i> -->
                      </li><!-- /.nav-item -->
                      <li class="nav__item with-dropdown">
-                         <a href="/products" class="dropdown-toggle nav__item-link">Products</a>
+                         <a href="{{ url('/products') }}" class="dropdown-toggle nav__item-link">Products</a>
                          <i class="fa fa-angle-right" data-toggle="dropdown"></i>
                          <ul class="dropdown-menu wide-dropdown-menu">
                              <li class="nav__item">

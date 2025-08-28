@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ContactController;
 
 // Homepage
 Route::get('/', function () {
@@ -13,6 +14,8 @@ Route::view('/about', 'about')->name('about');
 
 // Contact Page
 Route::view('/contact', 'contact')->name('contact');
+// Contact Form Submit (handles form POST)
+Route::post('/contact/submit', [ContactController::class, 'submit'])->name('contact.submit');
 
 // Product Pages
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');

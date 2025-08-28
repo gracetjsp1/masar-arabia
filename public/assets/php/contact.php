@@ -1,13 +1,14 @@
 <?php require("PHPMailer/PHPMailerAutoload.php");
 
 // ADD your Email and Name
-$recipientEmail='your@email';
-$recipientName='your Name';
+$recipientEmail='watercreativedeveloper@gmail.com';
+$recipientName='Masar Arabia';
 
 //collect the posted variables into local variables before calling $mail = new mailer
 
 $senderName = $_POST['contact-name'];
 $senderPhone = $_POST['contact-phone'];
+$senderPhone = $_POST['contact-email'];
 $senderMessage= $_POST['contact-message'];
 $senderSubject = 'New Message From ' . $senderName;
 
@@ -17,9 +18,9 @@ $mail = new PHPMailer();
 //Set who the message is to be sent from
 $mail->setFrom($recipientEmail, $recipientName);
 //Set an alternative reply-to address
-$mail->addReplyTo($senderEmail,$senderName);
+// $mail->addReplyTo($senderEmail,$senderName);
 //Set who the message is to be sent to
-$mail->addAddress($senderEmail, $senderName );
+// $mail->addAddress($senderEmail, $senderName );
 //Set the subject line
 $mail->Subject = $senderSubject;
 

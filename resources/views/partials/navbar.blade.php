@@ -61,10 +61,10 @@
                          </ul><!-- /.dropdown-menu -->
                      </li><!-- /.nav-item -->
                      <li class="nav__item">
-                         <a href="#" class="nav__item-link">About Us</a>
+                         <a href="{{ url('about') }}" class="nav__item-link">About Us</a>
                      </li><!-- /.nav-item -->
                      <li class="nav__item">
-                         <a href="#" class="nav__item-link">Contacts</a>
+                         <a href="{{ url('contact') }}" class="nav__item-link">Contacts</a>
                      </li><!-- /.nav-item -->
                  </ul><!-- /.navbar-nav -->
              </div><!-- /.navbar-collapse -->

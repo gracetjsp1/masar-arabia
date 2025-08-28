@@ -11,5 +11,6 @@
   @include('partials.home.features')
   @include('partials.home.banner')
   @include('partials.home.services')
+  @include('partials.home.contact_banner')
   @include('partials.home.contact')
 @endsection

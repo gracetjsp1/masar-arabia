@@ -14,6 +14,9 @@ Route::view('/about', 'about')->name('about');
 
 // Contact Page
 Route::view('/contact', 'contact')->name('contact');
+
+// Terms & Conditions Page
+Route::view('/terms-and-conditions', 'terms')->name('terms');
 // Contact Form Submit (handles form POST)
 Route::post('/contact/submit', [ContactController::class, 'submit'])->name('contact.submit');
 

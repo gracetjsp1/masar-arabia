@@ -18,9 +18,9 @@
                                 Saudi
                                 Arabia</p>
                             <ul class="social__icons">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100091987398412" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.instagram.com/masararabia?igsh=ZWV5cHEzazFrZGdv" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a></li>
+                                {{-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> --}}
                             </ul><!-- /.social-icons -->
                         </div>
                     </div><!-- /.col-xl-3 -->
@@ -86,15 +86,14 @@
                         <div class="footer__copyright">
                             <nav>
                                 <ul class="footer__copyright-links list-unstyled d-flex flex-wrap justify-content-end">
-                                    <li><a href="#">Terms & Conditions </a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="{{ route('terms') }}">Terms & Conditions </a></li>
+                                   
                                     <!-- <li><a href="#">Sitemap</a></li>
                     <li><a href="#">Employee login</a></li> -->
                                 </ul>
                             </nav>
-                            <p class="mb-0"> &copy; Masar Arabia First Trading Company, All Rights Reserved. With Love
-                                by
-                                <a href="#">Water Creative Studio Pvt. Ltd.</a>
+                            <p class="mb-0 text-muted"> &copy; Masar Arabia First Trading Company, All Rights Reserved. Designed By
+                                <a href="https://watercreativestudio.com/" class="text-muted">Water Creative Studio Pvt. Ltd.</a>
                             </p>
 
                         </div><!-- /.Footer-copyright -->

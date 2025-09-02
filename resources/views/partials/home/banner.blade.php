@@ -19,11 +19,11 @@
                   Masar Arabia is your trusted partner for all your instrumentation needs.</p>
               </div><!-- /.heading -->
               <h4 Class="text-white">Masar Arabia deals with a comprehensive <br> range of industrial products: </h4>
-              <ul class="list-items list-items-white list-unstyled mb-50">
+              <ul class="list-items list-items-white list-unstyled mb-50 website_list">
                 <li><a href="https://masararabia.com/cooling-and-frp.php" target="_blank" rel="noopener noreferrer">Cooling Solutions</a></li>
                 <li><a href="https://masararabia.com/water-treatment.php" target="_blank" rel="noopener noreferrer">Water Treatment</a></li>
                 <li><a href="https://masararabia.com/chemical.php" target="_blank" rel="noopener noreferrer">Chemical</a></li>
-                <li><a href="https://masararabia.com/instrumentation.php" target="_blank" rel="noopener noreferrer">Instrumentation</a></li>
+                <li><a href="https://masararabia.com/instrumentation/" target="_blank" rel="noopener noreferrer">Instrumentation</a></li>
                 <li><a href="https://masararabia.com/safety-equipment.php" target="_blank" rel="noopener noreferrer">Safety Equipment</a></li>
                 <li><a href="https://masararabia.com/electrical.php" target="_blank" rel="noopener noreferrer">Electrical</a></li>
                 <li><a href="https://masararabia.com/mechanical.php" target="_blank" rel="noopener noreferrer">Mechanical</a></li>

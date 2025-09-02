@@ -92,13 +92,22 @@ $(function () {
     });
 
     /*==========   Add active class to accordions   ==========*/
-    $('.accordion__item-header').on('click', function () {
-        $(this).parent('.accordion-item').addClass('opened');
-        $(this).parent('.accordion-item').siblings().removeClass('opened');
-    })
-    $('.accordion__item-title').on('click', function (e) {
-        e.preventDefault()
-    });
+    /*==========   Add active class to accordions   ==========*/
+$('.accordion-item__header').on('click', function () {
+    $(this).parent('.accordion-item').addClass('opened');
+    $(this).parent('.accordion-item').siblings().removeClass('opened');
+});
+
+$('.accordion-item__title').on('click', function (e) {
+    e.preventDefault();
+});
+    // $('.accordion__item-header').on('click', function () {
+    //     $(this).parent('.accordion-item').addClass('opened');
+    //     $(this).parent('.accordion-item').siblings().removeClass('opened');
+    // })
+    // $('.accordion__item-title').on('click', function (e) {
+    //     e.preventDefault()
+    // });
 
     /*==========   Load More Items  ==========*/
     function loadMore(loadMoreBtn, loadedItem) {

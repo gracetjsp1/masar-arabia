@@ -2277,7 +2277,6 @@ textarea.form-control {
     color: #fff;
 }
 
-
 /*-------------------
     lists
 -------------------*/
@@ -3896,69 +3895,77 @@ textarea.form-control {
 /*----------------------
     Accordions
 ------------------------*/
-.accordion-item {
-    border: 1px solid #ededed;
-    background-color: #ffffff;
-    border-radius: 3px;
-    padding: 25px 30px;
-    margin-bottom: 27px;
-}
+/*----------------------
+    Accordions
+------------------------*/
+/* .accordion {
+    border-top: 4px solid #0a7fac;
+} */
 
-.accordion-item .accordion__item-title {
-    font-family: "Teko", sans-serif;
-    color: #222222;
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 1;
+.accordion-item {
+    padding: 25px 0;
+    border-bottom: 2px solid #e7ebef;
+}
+.accordion-item .accordion-item__title {
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+    font-size: 19px;
     cursor: pointer;
     display: block;
     position: relative;
-    padding-right: 25px;
+    padding-left: 35px;
+    color: #222222;
 }
-
-.accordion-item .accordion__item-title:after {
-    position: absolute;
-    right: 0;
-    top: 0;
-    content: "";
-    font-family: fontawesome;
-    background-color: transparent;
-    color: #1b1a1a;
-    font-size: 10px;
-    font-weight: 400;
-    text-align: center;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    border-radius: 3px;
-}
-
-.accordion-item.opened {
-    border-color: #ec8d22;
-}
-
-.accordion-item.opened .accordion__item-title {
+.accordion-item .accordion-item__title:hover {
     color: #ec8d22;
 }
-
-.accordion-item.opened .accordion__item-title:after {
-    background-color: #ec8d22;
+.accordion-item .accordion-item__title:after {
+    content: "";
+    font-family: fontAwesome;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    font-weight: 900;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
     color: #ffffff;
-    content: "";
+    background-color: #222222;
 }
-
-.accordion-item .accordion__item-body {
-    padding-top: 25px;
+.accordion-item.opened
+    .accordion-item__header:not(.collapsed)
+    .accordion-item__title {
+    color: #ec8d22
+;
 }
-
-.accordion-item .accordion__item-body p {
+.accordion-item.opened
+    .accordion-item__header:not(.collapsed)
+    .accordion-item__title:after {
+    content: "\f107";
+    background-color: #ec8d22
+;
+}
+.accordion-item .accordion-item__body {
+    padding-top: 20px;
+}
+.accordion-item .accordion-item__body p {
     margin-bottom: 0;
 }
 
 /* Mobile Phones and tablets */
-@media only screen and (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 767px) {
     .accordion-item {
-        padding: 15px 20px;
+        padding: 15px 0;
+    }
+    .accordion-item .accordion-item__title {
+        font-size: 14px;
+    }
+    .accordion-item .accordion-item .accordion-item__body p {
+        font-size: 13px;
     }
 }
 
@@ -9496,9 +9503,9 @@ span.ui-slider-handle.ui-corner-all.ui-state-default {
     position: sticky;
     top: 20px;
 }
-th{
+th {
     color: rgb(34, 34, 34);
-    padding: 4px; 
+    padding: 4px;
 }
 td strong {
     color: rgb(34, 34, 34);
@@ -9537,5 +9544,21 @@ tr td p {
     max-width: 250px;
     height: auto;
     border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+/* Default link style */
+.website_list li a {
+    color: #ffffff; /* white text */
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+/* Hover effect */
+.website_list li a:hover {
+    color: #ec8d22;
+    background-color: #ffffff; /* Change to your preferred hover color */
+    border-radius: 0px;
 }

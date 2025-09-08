@@ -32,8 +32,8 @@
                                 <ul class="list-unstyled">
                                     <li><a href="{{ url('/') }}">Home</a></li>
                                     <li><a href="{{ url('/products') }}">Products</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="{{ url('about') }}">About Us</a></li>
+                                    <li><a href="{{ url('contact') }}">Contact Us</a></li>
                                 </ul>
                             </nav>
                         </div><!-- /.footer-widget-content -->
